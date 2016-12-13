@@ -1,0 +1,30 @@
+{
+    "name": "tns-mobileauth",
+    "version": "0.0.1",
+    "description": "nativescript auth manager to use with mobile auth of nidam",
+    "main": "index.js",
+    "dependencies": {
+        "tns-ajax": ""
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/burawi/tns-mobileauth.git"
+    },
+    "keywords": [
+        "mobileauth",
+        "tns",
+        "nativescript",
+        "authentication",
+        "nidam",
+        "nodejs"
+    ],
+    "author": "Abu Rawi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/burawi/tns-mobileauth/issues"
+    },
+    "homepage": "https://github.com/burawi/tns-mobileauth#readme"
+}
