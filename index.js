@@ -8,13 +8,13 @@ module.exports = function (origin,lang,test) {
 
     var ajax = require('tns-ajax')(test);
 
-    var AlertFail = function (response,fail) {
+    var AlertFail = function (msg,fail) {
         alert({
             title: lang('error'),
-            message: lang(response.msg),
+            message: lang(msg),
             okButtonText: lang('ok')
         });
-        if(fail !== undefined) fail(response);
+        if(fail !== undefined) fail();
     };
 
     var exports = {};
@@ -83,8 +83,10 @@ module.exports = function (origin,lang,test) {
                 sessionFile.writeTextSync(JSON.stringify(session));
                 success(response)
             } else {
-                AlertFail(response,fail);
+                AlertFail(response.msg,fail);
             }
+        }, function () {
+            AlertFail('ERRSERV',fail);
         });
     };
 
@@ -108,7 +110,7 @@ module.exports = function (origin,lang,test) {
                 if (response.success) {
                     success(response)
                 } else {
-                    AlertFail(response,fail);
+                    AlertFail(response.msg,fail);
                 }
             })
         });
