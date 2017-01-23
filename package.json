@@ -1,6 +1,6 @@
 {
   "name": "tns-mobileauth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "nativescript auth manager to use with mobile auth of nidam",
   "main": "index.js",
   "nativescript": {
