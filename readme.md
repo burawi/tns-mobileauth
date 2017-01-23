@@ -6,9 +6,7 @@ tns plugin add tns-mobileauth
 ## Params
 `origin`: origin url of server
 
-`lang`: object containing:
-- `error`: error alert title || default: 'Error'
-- `ok`: ok alert button text || default: 'OK'
+`lang`: function returning string by attribute.
 
 `test`: if working on test set true to get console messages.
 

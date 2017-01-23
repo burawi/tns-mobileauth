@@ -4,21 +4,15 @@ var fetchModule = require("fetch");
 
 module.exports = function (origin,lang,test) {
 
-    var langDefaults = {
-        error: 'Error',
-        ok: 'OK'
-    };
-
-    lang = Object.assign({},langDefaults,lang);
     if(test === undefined) test = false;
 
     var ajax = require('tns-ajax')(test);
 
     var AlertFail = function (response,fail) {
         alert({
-            title: lang.error,
-            message: response.msg,
-            okButtonText: lang.ok
+            title: lang('error'),
+            message: lang(response.msg),
+            okButtonText: lang('ok')
         });
         if(fail !== undefined) fail(response);
     };
@@ -93,7 +87,7 @@ module.exports = function (origin,lang,test) {
             }
         });
     };
-    
+
     exports.logout = function (callback) {
         var sessionFile = exports.getSessionFile();
         sessionFile.remove().then(function() {
