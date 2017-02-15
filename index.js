@@ -77,8 +77,8 @@ module.exports = function (origin,lang,test) {
             if (response.success) {
                 var sessionFile = exports.getSessionFile();
                 var session = {
-                    sessionId: response.sessionId,
-                    secretKey: response.secretKey
+                    sessionId: response.msg.sessionId,
+                    secretKey: response.msg.secretKey
                 };
                 sessionFile.writeTextSync(JSON.stringify(session));
                 success(response)
